@@ -269,6 +269,9 @@ int main (int argc, char **argv) {
     if (!Comparator<TYPE>::compare(h_c[i], h_ref[i], i, errors)) {
       ++errors;
     }
+    if(i < 10){
+      printf("c[%d]=%f, ref=%f\n", i, h_c[i], h_ref[i]);
+    }
   }
   if (errors != 0) {
     printf("FAILED! - %d errors\n", errors);
