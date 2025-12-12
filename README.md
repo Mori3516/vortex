@@ -24,6 +24,15 @@ Vortex news can be found on its [website](https://vortex.cc.gatech.edu/)
 	location = {Virtual Event, Greece},
 	series = {MICRO '21}
 }
+@misc{jeong2025insidevoltdesigningopensource,
+      title={Inside VOLT: Designing an Open-Source GPU Compiler}, 
+      author={Shinnung Jeong and Chihyo Ahn and Huanzhi Pu and Jisheng Zhao and Hyesoon Kim and Blaise Tine},
+      year={2025},
+      eprint={2511.13751},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2511.13751}, 
+}
 ```
 
 ## Specifications
@@ -55,7 +64,9 @@ Vortex news can be found on its [website](https://vortex.cc.gatech.edu/)
 - `miscs`: Miscellaneous resources.
 
 ## Quick Start
-If you are interested in a stable release of Vortex, you can download the latest release [here](https://github.com/vortexgpgpu/vortex/releases/latest). Otherwise, you can pull the most recent, but (potentially) unstable version as shown below. The following steps demonstrate how to build and run Vortex with the default driver: SimX. If you are interested in a different backend, look [here](docs/simulation.md).
+If you are interested in a stable release of Vortex, you can download the latest release [here](https://github.com/vortexgpgpu/vortex/releases/latest). Otherwise, you can pull the most recent, but (potentially) unstable version as shown below. The following steps demonstrate how to build and run Vortex with the default driver: SimX. If you are interested in a different backend, look [here](docs/simulation.md). 
+
+If you’re interested in the Vortex software stack/compiler and would like to install it instead of using the prebuilt toolchain, you can use [VOLT](https://github.com/vortexgpgpu/Volt).
 
 ### Supported OS Platforms
 - Ubuntu 18.04, 20.04, 22.04, 24.04
