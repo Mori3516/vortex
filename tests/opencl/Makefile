@@ -38,8 +38,11 @@ all:
 	#$(MAKE) -C lud
 	#$(MAKE) -C particlefilter
 	#$(MAKE) -C streamcluster
-
-
+	$(MAKE) -C mri-q
+	$(MAKE) -C VectorHypot
+	$(MAKE) -C reduce0
+	$(MAKE) -C cutcp
+	$(MAKE) -C sad 
 
 run-simx:
 	$(MAKE) -C vecadd run-simx
@@ -77,6 +80,11 @@ run-simx:
 	#$(MAKE) -C lud run-simx
 	#$(MAKE) -C particlefilter run-simx
 	#$(MAKE) -C streamcluster run-simx
+	$(MAKE) -C mri-q run-simx
+	$(MAKE) -C VectorHypot run-simx
+	$(MAKE) -C reduce0 run-simx
+	$(MAKE) -C cutcp run-simx
+	$(MAKE) -C sad run-simx
 
 run-rtlsim:
 	$(MAKE) -C vecadd run-rtlsim
@@ -152,3 +160,8 @@ clean:
 	$(MAKE) -C lud clean
 	$(MAKE) -C particlefilter clean
 	$(MAKE) -C streamcluster clean
+	$(MAKE) -C mri-q clean
+	$(MAKE) -C VectorHypot clean
+	$(MAKE) -C reduce0 clean
+	$(MAKE) -C cutcp clean
+	$(MAKE) -C sad clean
