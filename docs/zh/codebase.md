@@ -1,0 +1,41 @@
+# Vortex 代码库 (Codebase)
+
+Vortex 代码库的目录/文件布局如下：
+
+- `hw`:     
+  - `rtl`: 硬件 RTL 源代码 (hardware rtl sources)    
+    - `core`: 核心流水线 (core pipeline)
+    - `cache`: 缓存子系统 (cache subsystem)
+    - `mem`: 内存子系统 (memory subsystem)
+    - `fpu`: 浮点单元 (floating point unit)
+    - `interfaces`: 模块间通信接口 (interfaces for inter-module communication)
+    - `libs`: 通用 RTL 模块 (general-purpose RTL modules)    
+  - `syn`: 综合目录 (synthesis directory)
+    - `altera`: Altera 综合脚本 (Altera synthesis scripts)
+    - `xilinx`: Xilinx 综合脚本 (Xilinx synthesis scripts)    
+    - `synopsys`: Synopsys 综合脚本 (Synopsys synthesis scripts)
+    - `modelsim`: Modelsim 综合脚本 (Modelsim synthesis scripts)
+    - `yosys`: Yosys 综合脚本 (Yosys synthesis scripts)
+  - `unit_tests`: 一些硬件组件的单元测试 (unit tests for some hardware components)
+- `runtime`: 主机运行时软件 API (host runtime software APIs)
+  - `include`: Vortex 驱动程序公共头文件 (Vortex driver public headers)
+  - `stub`: Vortex 存根驱动程序库 (Vortex stub driver library)
+  - `opae`: 使用 Intel OPAE API 的软件驱动程序，设备目标为 fpga|asesim|opaesim (software driver that uses Intel OPAE API with device targets=fpga|asesim|opaesim)
+  - `xrt`: 使用 Xilinx XRT API 的软件驱动程序，设备目标为 hw|hw_emu|sw_emu (software driver that uses Xilinx XRT API with device targets=hw|hw_emu|sw_emu)
+  - `rtlsim`: 使用 rtlsim 仿真器的软件驱动程序 (software driver that uses rtlsim simulator)
+  - `simx`: 使用 simX 仿真器的软件驱动程序 (software driver that uses simX simulator)
+- `kernel`: GPU 内核软件 API (GPU kernel software APIs)
+  - `include`: Vortex 运行时公共头文件 (Vortex runtime public headers)
+  - `linker`: 编译内核的链接器文件 (linker file for compiling kernels)
+  - `src`: 运行时实现 (runtime implementation)
+- `sim`: 
+  - `opaesim`: Intel OPAE AFU RTL 仿真器 (Intel OPAE AFU RTL simulator)
+  - `rtlsim`: 处理器 RTL 仿真器 (processor RTL simulator)
+  - `simX`: Vortex 的周期近似仿真器 (cycle approximate simulator for vortex)
+- `tests`: 测试仓库 (tests repository).
+  - `riscv`: RISC-V 一致性测试 (RISC-V conformance tests)
+  - `kernel`: 内核测试 (kernel tests)
+  - `regression`: 回归测试 (regression tests)  
+  - `opencl`: OpenCL 基准测试和测试 (opencl benchmarks and tests)
+- `ci`: 持续集成脚本 (continuous integration scripts)
+- `miscs`: 杂项资源 (miscellaneous resources).
