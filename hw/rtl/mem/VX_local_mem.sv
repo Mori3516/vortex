@@ -24,6 +24,10 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     // Number of banks
     parameter NUM_BANKS         = 4,
 
+    // Bank swizzling
+    parameter SWIZZLE_ENABLE    = 1,
+    parameter SWIZZLE_SHIFT     = `CLOG2(NUM_BANKS),
+
     // Address width
     parameter ADDR_WIDTH        = `CLOG2(SIZE),
     // Size of a word in bytes
@@ -65,7 +69,9 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     wire [NUM_REQS-1:0][BANK_SEL_WIDTH-1:0] req_bank_idx;
     if (NUM_BANKS > 1) begin : g_req_bank_idx
         for (genvar i = 0; i < NUM_REQS; ++i) begin : g_req_bank_idxs
-            assign req_bank_idx[i] = mem_bus_if[i].req_data.addr[0 +: BANK_SEL_BITS];
+            wire [BANK_SEL_BITS-1:0] req_bank_idx_raw = mem_bus_if[i].req_data.addr[0 +: BANK_SEL_BITS];
+            wire [BANK_SEL_BITS-1:0] req_bank_idx_swz = req_bank_idx_raw ^ mem_bus_if[i].req_data.addr[SWIZZLE_SHIFT +: BANK_SEL_BITS];
+            assign req_bank_idx[i] = SWIZZLE_ENABLE ? req_bank_idx_swz : req_bank_idx_raw;
         end
     end else begin : g_req_bank_idx_0
         assign req_bank_idx = 0;

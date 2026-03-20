@@ -112,6 +112,7 @@ module VX_mem_unit import VX_gpu_pkg::*; #(
         .WORD_SIZE  (LSU_WORD_SIZE),
         .ADDR_WIDTH (LMEM_ADDR_WIDTH),
         .TAG_WIDTH  (LMEM_TAG_WIDTH),
+        .SWIZZLE_ENABLE(`LMEM_SWIZZLE),
         .OUT_BUF    (3)
     ) local_mem (
         .clk        (clk),
